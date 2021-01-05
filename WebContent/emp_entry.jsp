@@ -6,17 +6,14 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Insert title here</title>
-	<link rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-			crossorigin="anonymous">
+	<%@include file="include.jsp" %>
 </head>
 <body>
 		<header>
 			<nav class="navbar navbar-expand-md navbar-dark" style="background-color: tomato">
 				<div>
 					<a href="#" class="navbar-brand"> 
-						User Management App 
+						Employee Management App 
 					</a>
 				</div>
 				<ul class="navbar-nav">
@@ -45,10 +42,10 @@
 							<caption>
 								<h2>
 									<c:if test="${emp != null}">
-			            			Edit User
+			            			Edit Employee
 				            		</c:if>
 									<c:if test="${emp == null}">
-				            			Add New User
+				            			Add New Employee
 				            		</c:if>
 								</h2>
 							</caption>
@@ -58,17 +55,17 @@
 								</c:if>
 								
 								<fieldset class="form-group">
-									<label>User Name</label>
+									<label>Emp Name</label>
 									<input type="text" value="<c:out value='${emp.emp_name}'/>" class="form-control" name="emp_name" required="required" />
 								</fieldset>
 				
 								<fieldset class="form-group">
-									<label>User Email</label> 
+									<label>Emp Email</label> 
 									<input type="text" value="<c:out value='${emp.emp_email}'/>" class="form-control" name="emp_email" />
 								</fieldset>
 				
 								<fieldset class="form-group">
-									<label>User Dept</label> 
+									<label>Emp Dept</label> 
 									<input type="text" value="<c:out value='${emp.emp_dept}'/>" class="form-control" name="emp_dept" />
 								</fieldset>
 								<button type="submit" class="btn btn-success">Save</button>
